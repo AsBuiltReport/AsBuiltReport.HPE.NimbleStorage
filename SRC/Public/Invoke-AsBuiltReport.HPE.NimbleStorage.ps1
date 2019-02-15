@@ -21,7 +21,8 @@ function Invoke-AsBuiltReport.HPE.NimbleStorage {
     [CmdletBinding()]
     param (
         $Target,
-        [pscredential] $Credential
+        [pscredential] $Credential,
+		$StyleName
     )
 
     # If custom style not set, use default style
