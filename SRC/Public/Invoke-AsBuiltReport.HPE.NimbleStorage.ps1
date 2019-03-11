@@ -1,5 +1,3 @@
-#Requires -Modules PScribo, HPENimblePowerShellToolkit
-
 function Invoke-AsBuiltReport.HPE.NimbleStorage {
     <#
     .SYNOPSIS
@@ -20,14 +18,14 @@ function Invoke-AsBuiltReport.HPE.NimbleStorage {
     #region Script Parameters
     [CmdletBinding()]
     param (
-        $Target,
+        [string[]] $Target,
         [pscredential] $Credential,
-		$StyleName
+		$StylePath
     )
 
     # If custom style not set, use default style
-    if (!$StyleName) {
-        & "$PSScriptRoot\..\Assets\Styles\NimbleStorage.ps1"
+    if (!$StylePath) {
+        & "$PSScriptRoot\..\..\AsBuiltReport.HPE.NimbleStorage.Style.ps1"
     }
 
     $Script:Array = $Null
